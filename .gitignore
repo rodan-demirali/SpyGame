@@ -1,0 +1,13 @@
+bin/
+obj/
+*.user
+*.suo
+*.vs/
+.vscode/
+*.pdb
+*.exe
+*.dll
+*.db
+appsettings.json
+secrets.json
+.env

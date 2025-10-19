@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+	
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>1.3</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+
+	<!-- Buradan sonrası senin ekleyeceğin stringler -->
+	<data name="WelcomeText" xml:space="preserve">	
+	    <value>Spy Oyunu</value>
+	</data>
+
+	<data name="lblPlayersText" xml:space="preserve">	
+	    <value>Oyuncular</value>
+	</data>
+
+	<data name="lblSpiesText" xml:space="preserve">	
+	    <value>Casuslar</value>
+	</data>
+
+	<data name="lblTimeText" xml:space="preserve">	
+	    <value>Zaman</value>
+	</data>
+
+	<data name="lblSectionsText" xml:space="preserve">	
+	    <value>Konular</value>
+	</data>
+
+	<data name="btnPlayText" xml:space="preserve">	
+	    <value>OYNA</value>
+	</data>
+
+	<data name="lblCountriesText" xml:space="preserve">	
+	    <value>Ülkeler</value>
+	</data>
+
+	<data name="lblObjectsText" xml:space="preserve">	
+	    <value>Eşyalar</value>
+	</data>
+
+	<data name="lblSportsText" xml:space="preserve">	
+	    <value>Sporlar</value>
+	</data>
+
+	<data name="lblPlacesText" xml:space="preserve">	
+	    <value>Yerler</value>
+	</data>
+
+	<data name="lblAnimalsText" xml:space="preserve">	
+	    <value>Hayvanlar</value>
+	</data>
+
+	<data name="lblTransportText" xml:space="preserve">	
+	    <value>Ulaşım</value>
+	</data>
+
+	<data name="btnConfirmText" xml:space="preserve">	
+	    <value>ONAYLA</value>
+	</data>
+
+	<data name="lblPlayerNamesText" xml:space="preserve">	
+	    <value>Oyuncu İsimleri</value>
+	</data>
+
+	<data name="btnClearPlayerNamesText" xml:space="preserve">	
+	    <value>İsimleri Temizle</value>
+	</data>
+
+	<data name="PlayerLabel" xml:space="preserve">	
+	    <value>Oyuncu</value>
+	</data>
+
+	<data name="lblOtherSpiesText" xml:space="preserve">	
+	    <value>Diğer Casuslar</value>
+	</data>
+
+	<data name="lblTimeLeftText" xml:space="preserve">	
+	    <value>Kalan Zaman</value>
+	</data>
+
+	<data name="btnShowSpiesText" xml:space="preserve">	
+	    <value>CASUSLARI GÖSTER</value>
+	</data>
+
+	<data name="lblGameOverText" xml:space="preserve">	
+	    <value>OYUN BİTTİ!</value>
+	</data>
+
+	<data name="lblTheWordWasText" xml:space="preserve">	
+	    <value>Gizli Kelime</value>
+	</data>
+
+	<data name="btnNewGameText" xml:space="preserve">	
+	    <value>YENİ OYUN</value>
+	</data>
+
+	<data name="lblGameSettingsText" xml:space="preserve">	
+	    <value>Oyun Ayarları</value>
+	</data>
+
+	<data name="lblSelectGameLanguageText" xml:space="preserve">	
+	    <value>Oyun Dilini Belirle</value>
+	</data>
+
+	<data name="btnSelectLanguageText" xml:space="preserve">	
+	    <value>🌐 Bir Dil Seç</value>
+	</data>
+
+	<data name="lblShowOtherSpiesModeText" xml:space="preserve">	
+	    <value>Casuslar Birbirini Görebilsin</value>
+	</data>
+
+	<data name="btnApplyText" xml:space="preserve">	
+	    <value>✔ UYGULA</value>
+	</data>
+
+	<data name="lblPage1Paragrapgh1Text" xml:space="preserve">	
+		<value>Spy Game’e hoş geldiniz, her yerde ve her zaman oynayabileceğiniz bir masa oyunu. Tek ihtiyacınız olan bir grup arkadaş ve oyuna dalmak için doğru bir atmosfer. Oyuna başlamak için önce bir tema seçmelisiniz. Her tema, kendine ait kelimeler ve benzersiz bir tasarım sunar; bu sayede oyununuza taze bir hava katar ve her turu heyecanlı ve farklı kılar.</value>
+	</data>
+
+	<data name="lblPage1Paragrapgh2Text" xml:space="preserve">	
+		<value>Spy Game’de iki rol vardır: AGENT ve SPY (Casus). Agent’ların görevi Spyi ortaya çıkarmak, Spy’ın görevi ise yakalanmadan elemeden kurtulmaktır. Bu, her turda yeni bir gerilim ve eğlence getiren bir çıkarım, blöf ve hızlı düşünme mücadelesidir.</value>
+	</data>
+
+	<data name="lblPage1Paragrapgh3Text" xml:space="preserve">	
+		<value>Oyun başladığında, tüm Agent’lara aynı gizli kelime verilir. Kelimeyi okuduktan sonra hafızalarına almalı ve gizli tutmalıdırlar. Spy ise hiçbir kelime almaz. Spy’ın görevi, kelimeyi biliyormuş gibi davranarak Agent’ların arasına karışmak ve bilgisizliğini açığa çıkarmamaktır.</value>
+	</data>
+
+	<data name="lblPage2Paragrapgh1Text" xml:space="preserve">	
+		<value>Herkes rolünü öğrendikten sonra sorgulama aşaması başlar. Oyuncular önce bu turun ne kadar süreceğine karar verir—ya bir zaman limiti belirleyerek ya da sabit bir soru sayısında anlaşarak. Daha sonra sırayla gizli kelimeye dair ipuçları verecek sorular sorulur ve cevaplanır. Agent’lar dikkatli olmalı, Spy’ı açığa çıkarabilecek tutarsızlık veya garip cevaplara odaklanmalıdır.</value>
+	</data>
+
+	<data name="lblPage2Paragrapgh2Text" xml:space="preserve">	
+		<value>Sorgulama sona erdiğinde, oylama zamanı gelir. Her oyuncu, Spy olduğuna inandığı kişiyi seçer. Eğer yanlışlıkla bir Agent suçlanırsa, o Agent elenir ve oyun bir sonraki tura geçer. Eğer Spy başarılı bir şekilde tespit edilirse, Agent’lar anında kazanır. Spy’ın tek zafer yolu, her oylamadan yakalanmadan kurtulmaktır.</value>
+	</data>
+
+
+
+
+</root>

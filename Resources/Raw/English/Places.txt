@@ -1,0 +1,20 @@
+Park
+Museum
+Library
+Cinema
+Theater
+Restaurant
+Cafe
+School
+University
+Hospital
+Airport
+Bus stop
+Beach
+Mountain
+Forest
+Shopping mall
+Stadium
+Mosque
+Church
+Marketplace

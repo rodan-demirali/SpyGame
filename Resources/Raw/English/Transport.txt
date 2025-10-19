@@ -1,0 +1,20 @@
+Car
+Bus
+Train
+Airplane
+Ship
+Ferry
+Metro
+Tram
+Bicycle
+Motorcycle
+Truck
+Lorry
+Helicopter
+Scooter
+Carriage
+Taxi
+Cable car
+Rowboat
+Jet ski
+Minibus

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:SpyGame.Resources.Strings"
+             x:Class="SpyGame.Ekran1Page"
+             BackgroundColor="#1E1E2C"
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,40" Spacing="30" HorizontalOptions="Center">
+
+            <!-- Başlık -->
+            <Label Text="{x:Static resources:AppResources.lblPlayersText}"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center" />
+
+            <!-- Stepper -->
+            <HorizontalStackLayout Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button Text="-" FontSize="24" WidthRequest="60" HeightRequest="60" BackgroundColor="#FF4C4C" TextColor="White"
+                        Clicked="DecreasePlayerCount"/>
+                <Label x:Name="lblStepperValue" Text="5" FontSize="28" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center"/>
+                <Button Text="+" FontSize="24" WidthRequest="60" HeightRequest="60" BackgroundColor="#4CC9F0" TextColor="White"
+                        Clicked="IncreasePlayerCount"/>
+            </HorizontalStackLayout>
+
+            <!-- Player Names Listesi -->
+
+            <HorizontalStackLayout Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
+
+                <Label Text="{x:Static resources:AppResources.lblPlayerNamesText}" FontSize="20" TextColor="White" HorizontalOptions="Center"/>
+
+                <Button Text="{x:Static resources:AppResources.btnClearPlayerNamesText}" FontSize="14" WidthRequest="160" HeightRequest="45" BackgroundColor="#FF4C4C" TextColor="White"
+                        Clicked="clearPlayerNames"/>
+
+            </HorizontalStackLayout>
+
+            <StackLayout x:Name="stkPlayerNames" Spacing="10" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+            <!-- Confirm Butonu -->
+            <Frame HasShadow="True"
+                   CornerRadius="30"
+                   Padding="0"
+                   BackgroundColor="Transparent"
+                   HorizontalOptions="Center">
+                <Button Text="{x:Static resources:AppResources.btnConfirmText}"
+                        Clicked="ConfirmAndGoBack"
+                        FontSize="22"
+                        CornerRadius="25"
+                        HeightRequest="60"
+                        WidthRequest="200"
+                        BackgroundColor="#FF4C4C"
+                        TextColor="White"/>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

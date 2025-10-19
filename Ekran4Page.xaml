@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:SpyGame.Resources.Strings"
+             x:Class="SpyGame.Ekran4Page"
+             BackgroundColor="#1E1E2C"
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,40"
+                             Spacing="35"
+                             HorizontalOptions="Center"
+                             VerticalOptions="CenterAndExpand">
+
+            <!-- Başlık -->
+            <Label Text="{x:Static resources:AppResources.lblSectionsText}"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center" />
+
+            <!-- Section Kartları -->
+            <Grid RowSpacing="25" ColumnSpacing="25"
+                  VerticalOptions="Center"
+                  HorizontalOptions="Center">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Countries -->
+                <Frame x:Name="Countries"
+                       Grid.Row="0" Grid.Column="0"
+                       HeightRequest="160" WidthRequest="160"
+                       CornerRadius="20"
+                       BackgroundColor="#2C2C3E"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="10" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                        <Image Source="sectioncountryicon.png" HeightRequest="60" WidthRequest="60"/>
+                        <Label Text="{x:Static resources:AppResources.lblCountriesText}"
+                               FontSize="20"
+                               TextColor="White"
+                               HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer CommandParameter="Countries" Tapped="SectionOptionClicked"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <!-- Objects -->
+                <Frame x:Name="Objects"
+                       Grid.Row="0" Grid.Column="1"
+                       HeightRequest="160" WidthRequest="160"
+                       CornerRadius="20"
+                       BackgroundColor="#2C2C3E"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="10" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                        <Image Source="sectionobjectsicon.png" HeightRequest="60" WidthRequest="60"/>
+                        <Label Text="{x:Static resources:AppResources.lblObjectsText}"
+                               FontSize="20"
+                               TextColor="White"
+                               HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer CommandParameter="Objects" Tapped="SectionOptionClicked"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <!-- Sports -->
+                <Frame x:Name="Sports"
+                       Grid.Row="1" Grid.Column="0"
+                       HeightRequest="160" WidthRequest="160"
+                       CornerRadius="20"
+                       BackgroundColor="#2C2C3E"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="10" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                        <Image Source="sectionsportsicon.png" HeightRequest="60" WidthRequest="60"/>
+                        <Label Text="{x:Static resources:AppResources.lblSportsText}"
+                               FontSize="20"
+                               TextColor="White"
+                               HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer CommandParameter="Sports" Tapped="SectionOptionClicked"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <!-- Places -->
+                <Frame x:Name="Places"
+                       Grid.Row="1" Grid.Column="1"
+                       HeightRequest="160" WidthRequest="160"
+                       CornerRadius="20"
+                       BackgroundColor="#2C2C3E"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="10" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                        <Image Source="sectionplacesicon.png" HeightRequest="60" WidthRequest="60"/>
+                        <Label Text="{x:Static resources:AppResources.lblPlacesText}"
+                               FontSize="20"
+                               TextColor="White"
+                               HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer CommandParameter="Places" Tapped="SectionOptionClicked"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+
+                <!-- Animals -->
+                <Frame x:Name="Animals"
+                       Grid.Row="2" Grid.Column="0"
+                       HeightRequest="160" WidthRequest="160"
+                       CornerRadius="20"
+                       BackgroundColor="#2C2C3E"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="10" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                        <Image Source="sectionanimalsicon.png" HeightRequest="60" WidthRequest="60"/>
+                        <Label Text="{x:Static resources:AppResources.lblAnimalsText}"
+                               FontSize="20"
+                               TextColor="White"
+                               HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer CommandParameter="Animals" Tapped="SectionOptionClicked"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+
+                <!-- Transport -->
+                <Frame x:Name="Transport"
+                       Grid.Row="2" Grid.Column="1"
+                       HeightRequest="160" WidthRequest="160"
+                       CornerRadius="20"
+                       BackgroundColor="#2C2C3E"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="10" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                        <Image Source="sectiontransporticon.png" HeightRequest="60" WidthRequest="60"/>
+                        <Label Text="{x:Static resources:AppResources.lblTransportText}"
+                               FontSize="20"
+                               TextColor="White"
+                               HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer CommandParameter="Transport" Tapped="SectionOptionClicked"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+
+            </Grid>
+
+            <!-- Confirm Butonu -->
+            <Frame HasShadow="True"
+                   CornerRadius="30"
+                   Padding="0"
+                   BackgroundColor="Transparent"
+                   HorizontalOptions="Center">
+                <Button Text="{x:Static resources:AppResources.btnConfirmText}"
+                        Clicked="ConfirmAndGoBack"
+                        FontSize="22"
+                        CornerRadius="25"
+                        HeightRequest="60"
+                        WidthRequest="200"
+                        BackgroundColor="#FF4C4C"
+                        TextColor="White"/>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

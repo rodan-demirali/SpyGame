@@ -1,0 +1,20 @@
+Araba
+Otobüs
+Tren
+Uçak
+Gemi
+Vapur
+Metro
+Tramvay
+Bisiklet
+Motosiklet
+Kamyon
+Tır
+Helikopter
+Scooter
+Fayton
+Taksi
+Teleferik
+Kayık
+Jet ski
+Minibüs

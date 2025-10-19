@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:SpyGame.Resources.Strings"
+             x:Class="SpyGame.GamePage"
+             BackgroundColor="#1E1E2C"
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False">
+
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+        <!-- Kart ve Other Spies alanı -->
+        <Grid x:Name="selectionArea" AbsoluteLayout.LayoutBounds="0.5,0.4,AutoSize,AutoSize"
+              AbsoluteLayout.LayoutFlags="PositionProportional">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- FRONT CARD -->
+            <Frame x:Name="frontCard"
+                   WidthRequest="220" HeightRequest="140"
+                   BackgroundColor="#1E90FF"
+                   CornerRadius="20"
+                   HasShadow="True"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Grid.Row="0">
+                <Label x:Name="cardFront"
+                       Text="Front"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       TextColor="White"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnCardTapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <!-- BACK CARD -->
+            <Frame x:Name="backCard"
+                   WidthRequest="220" HeightRequest="140"
+                   BackgroundColor="#FF4500"
+                   CornerRadius="20"
+                   HasShadow="True"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Grid.Row="0"
+                   IsVisible="False">
+                <Label x:Name="lblDurum"
+                       Text="Back"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       TextColor="White"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnCardTapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <!-- Other Spies -->
+            <Frame x:Name="otherSpiesContainer"
+                   Grid.Row="1"
+                   BackgroundColor="#2C2C3E"
+                   CornerRadius="20"
+                   Padding="15"
+                   IsVisible="False"
+                   HasShadow="True"
+                   HorizontalOptions="Center">
+                <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Label Text="{x:Static resources:AppResources.lblOtherSpiesText}"
+                           TextColor="White"
+                           FontSize="20"
+                           HorizontalOptions="Center"/>
+                    <StackLayout x:Name="stkOtherSpies" Spacing="5"/>
+                </VerticalStackLayout>
+            </Frame>
+
+        </Grid>
+
+        <!-- Timer (FULL SCREEN) -->
+        <Frame x:Name="timerArea"
+       AbsoluteLayout.LayoutBounds="0,0,1,1"
+       AbsoluteLayout.LayoutFlags="All"
+       Padding="30"
+       CornerRadius="0"
+       BackgroundColor="DarkOliveGreen"
+       HasShadow="False"
+       IsVisible="False">
+
+            <Grid RowDefinitions="*,Auto">
+                <!-- Ortadaki geri sayım alanı -->
+                <VerticalStackLayout Spacing="20" 
+                             HorizontalOptions="Center" 
+                             VerticalOptions="Center"
+                             Grid.Row="0">
+                    <Label Text="{x:Static resources:AppResources.lblTimeLeftText}" 
+                   FontSize="40" 
+                   TextColor="White" 
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"/>
+                    <Label x:Name="lblTime"
+                   Text="02:47:19"
+                   FontSize="120"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+
+                <!-- Alt kısma yapışan buton -->
+                <Button Text="{x:Static resources:AppResources.btnShowSpiesText}"
+                Clicked="ShowSpiesClicked"
+                HeightRequest="55"
+                WidthRequest="250"
+                BackgroundColor="#FF4C4C"
+                TextColor="White"
+                FontSize="24"
+                CornerRadius="35"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Grid.Row="1"/>
+            </Grid>
+        </Frame>
+
+        <!-- Game Over Area -->
+        <Frame x:Name="gameOverArea"
+       AbsoluteLayout.LayoutBounds="0,0,1,1"
+       AbsoluteLayout.LayoutFlags="All"
+       IsVisible="False"
+       BackgroundColor="#800080"
+       CornerRadius="0"
+       Padding="30"
+       HasShadow="False"
+       HorizontalOptions="Center"
+       VerticalOptions="Center">
+
+            <VerticalStackLayout Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
+
+                <Label Text="{x:Static resources:AppResources.lblGameOverText}" 
+               TextColor="White" 
+               FontSize="48" 
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"/>
+
+                <Label Text="{x:Static resources:AppResources.lblTheWordWasText}" 
+               TextColor="White" 
+               FontSize="20" 
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"/>
+
+                <Frame Padding="0"
+                       Margin="5"
+                       BackgroundColor="#4C4CFF"
+                       CornerRadius="17"
+                       HasShadow="False"
+                       HorizontalOptions="Center">
+
+                    <Label x:Name="gameOverWord" 
+                           Text="jhjashdjahd"
+                           TextColor="White"
+                           Padding="15"
+                           FontSize="32"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"/>
+                </Frame>
+
+
+
+                <Label Text="{x:Static resources:AppResources.lblSpiesText}" 
+               TextColor="White" 
+               FontSize="32" 
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"/>
+
+                <ScrollView HeightRequest="300"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+                    <StackLayout x:Name="stkSpies" 
+                                 Spacing="10" 
+                                 HorizontalOptions="Center">
+                    </StackLayout>
+                </ScrollView>
+
+
+                <Button Text="{x:Static resources:AppResources.btnNewGameText}"
+                Clicked="GoBackMenu"
+                HeightRequest="70"
+                WidthRequest="250"
+                BackgroundColor="#FF4C4C"
+                TextColor="White"
+                FontSize="24"
+                CornerRadius="35"
+                HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+        </Frame>
+
+
+    </AbsoluteLayout>
+
+</ContentPage>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:SpyGame.Resources.Strings"
+             x:Class="SpyGame.MainPage"
+             BackgroundColor="#1E1E2C"
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,40"
+            Spacing="35"
+            HorizontalOptions="Center">
+
+            <!-- Başlık ve Sağdaki Buton -->
+            <Grid ColumnDefinitions="*,Auto, Auto" Padding="0,0,0,0">
+                <!-- Ortalanmış Label -->
+                <Label Text="{x:Static resources:AppResources.WelcomeText}"
+           FontSize="24"
+           FontAttributes="Bold"
+           TextColor="White"
+           HorizontalOptions="Center"
+           VerticalOptions="Center"
+           Grid.ColumnSpan="3" />
+
+                <!-- Sağdaki Yuvarlak Buton -->
+                <Button Text="?"
+            WidthRequest="40"
+            HeightRequest="40"
+            CornerRadius="20"
+            BackgroundColor="#FF4C4C"
+            TextColor="White"
+            FontAttributes="Bold"
+            FontSize="20"
+            Margin="0,0,10,0"
+            HorizontalOptions="End"
+            VerticalOptions="Center"
+            Clicked="OnTutorialButtonClicked"
+            Grid.Column="1"/>
+
+
+                <Button Text="i"
+            WidthRequest="40"
+            HeightRequest="40"
+            CornerRadius="20"
+            BackgroundColor="#FF4C4C"
+            TextColor="White"
+            FontAttributes="Bold"
+            FontSize="20"
+            Margin="0,0,0,0"
+            HorizontalOptions="End"
+            VerticalOptions="Center"
+            Clicked="OnInfoButtonClicked"
+            Grid.Column="2"/>
+            </Grid>
+
+            <!-- Menü Kartları -->
+            <Grid RowSpacing="25" ColumnSpacing="25"
+                  VerticalOptions="Center"
+                  HorizontalOptions="Center">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Players -->
+                <Frame Grid.Row="0" Grid.Column="0"
+                       HeightRequest="160" WidthRequest="160"
+                       CornerRadius="20"
+                       Padding="10"
+                       BackgroundColor="#2C2C3E"
+                       HasShadow="True">
+
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Spacing="10">
+                        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                            <Image Source="usersicon.png" HeightRequest="60" WidthRequest="60"/>
+                            <Label x:Name="lblPlayerCount" Text="5"
+                                   FontSize="28"
+                                   FontAttributes="Bold"
+                                   TextColor="#FFD700"
+                                   VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                        <Label Text="{x:Static resources:AppResources.lblPlayersText}"
+                               FontSize="20"
+                               TextColor="White"
+                               HorizontalOptions="Center"
+                               VerticalOptions="End"/>
+                    </VerticalStackLayout>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnEkran1Clicked"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <!-- Spies -->
+                <Frame Grid.Row="0" Grid.Column="1"
+                       HeightRequest="160" WidthRequest="160"
+                       CornerRadius="20"
+                       Padding="10"
+                       BackgroundColor="#2C2C3E"
+                       HasShadow="True">
+
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Spacing="10">
+                        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                            <Image Source="spyicon.png" HeightRequest="60" WidthRequest="60"/>
+                            <Label x:Name="lblSpyCount" Text="5"
+                                   FontSize="28"
+                                   FontAttributes="Bold"
+                                   TextColor="#FF4C4C"
+                                   VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                        <Label Text="{x:Static resources:AppResources.lblSpiesText}"
+                               FontSize="20"
+                               TextColor="White"
+                               HorizontalOptions="Center"
+                               VerticalOptions="End"/>
+                    </VerticalStackLayout>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnEkran2Clicked"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <!-- Timer -->
+                <Frame Grid.Row="1" Grid.Column="0"
+                       HeightRequest="160" WidthRequest="160"
+                       CornerRadius="20"
+                       Padding="10"
+                       BackgroundColor="#2C2C3E"
+                       HasShadow="True">
+
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Spacing="10">
+                        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                            <Image Source="timericon.png" HeightRequest="60" WidthRequest="60"/>
+                            <Label x:Name="lblTime" Text="5"
+                                   FontSize="28"
+                                   FontAttributes="Bold"
+                                   TextColor="#4CC9F0"
+                                   VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                        <Label Text="{x:Static resources:AppResources.lblTimeText}"
+                               FontSize="20"
+                               TextColor="White"
+                               HorizontalOptions="Center"
+                               VerticalOptions="End"/>
+                    </VerticalStackLayout>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnEkran3Clicked"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <!-- Sections -->
+                <Frame Grid.Row="1" Grid.Column="1"
+                       HeightRequest="160" WidthRequest="160"
+                       CornerRadius="20"
+                       Padding="10"
+                       BackgroundColor="#2C2C3E"
+                       HasShadow="True">
+
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Spacing="10">
+                        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                            <Image Source="sectionsicon.png" HeightRequest="60" WidthRequest="60"/>
+                            <Label x:Name="lblSectionCount" Text="5"
+                                   FontSize="28"
+                                   FontAttributes="Bold"
+                                   TextColor="#90EE90"
+                                   VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                        <Label Text="{x:Static resources:AppResources.lblSectionsText}"
+                               FontSize="20"
+                               TextColor="White"
+                               HorizontalOptions="Center"
+                               VerticalOptions="End"/>
+                    </VerticalStackLayout>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnEkran4Clicked"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+            </Grid>
+
+            <!-- PLAY Butonu -->
+            <Frame HasShadow="True"
+                   CornerRadius="30"
+                   Padding="0"
+                   BackgroundColor="Transparent"
+                   HorizontalOptions="Center">
+                <Button Text="{x:Static resources:AppResources.btnPlayText}"
+                        Clicked="StartPlaying"
+                        FontSize="22"
+                        CornerRadius="25"
+                        HeightRequest="60"
+                        WidthRequest="200"
+                        BackgroundColor="#FF4C4C"
+                        TextColor="White"/>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

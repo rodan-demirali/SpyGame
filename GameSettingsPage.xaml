@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:SpyGame.Resources.Strings"
+             x:Class="SpyGame.GameSettingsPage"
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False">
+
+    <!-- Arka plan gradient -->
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#1E1E2C" Offset="0.0" />
+            <GradientStop Color="#2E2E40" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Başlık -->
+            <Label Text="{x:Static resources:AppResources.lblGameSettingsText}"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="White"
+                   Margin="0,10,0,20"/>
+
+            <!-- Dil seçimi alanı -->
+            <Frame BackgroundColor="#2A2A3C"
+                   CornerRadius="15"
+                   Padding="15"
+                   HasShadow="True">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="{x:Static resources:AppResources.lblSelectGameLanguageText}"
+                           FontSize="18"
+                           TextColor="White"
+                           FontAttributes="Bold"/>
+
+                    <Button x:Name="languageButton"
+                            Text="{x:Static resources:AppResources.btnSelectLanguageText}"
+                            TextColor="White"
+                            BackgroundColor="#3E3E55"
+                            CornerRadius="10"
+                            Padding="10,5"
+                            FontAttributes="Bold"
+                            Clicked="OnLanguageButtonClicked"/>
+
+                    <Frame x:Name="languagePopup"
+                           BackgroundColor="#3E3E55"
+                           Padding="10"
+                           IsVisible="False"
+                           CornerRadius="10"
+                           BorderColor="Gray">
+                        <CollectionView x:Name="languageCollection"
+                                        SelectionMode="Single"
+                                        SelectionChanged="OnLanguageSelected">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Orientation="Horizontal" Padding="5">
+                                        <Image Source="{Binding Icon}"
+                                               WidthRequest="28"
+                                               HeightRequest="28"
+                                               Margin="0,0,10,0"/>
+                                        <Label Text="{Binding Name}"
+                                               VerticalOptions="Center"
+                                               TextColor="White"
+                                               FontSize="16"/>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </Frame>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Toggle alanı -->
+            <Frame BackgroundColor="#2A2A3C"
+                   CornerRadius="15"
+                   Padding="15"
+                   HasShadow="True">
+                <Grid ColumnDefinitions="Auto,* ,Auto">
+                    <Label Text="🕵️"
+                           FontSize="20"
+                           TextColor="White"
+                           VerticalOptions="Center"
+                           Margin="0,0,10,0"/>
+                    <Label Text="{x:Static resources:AppResources.lblShowOtherSpiesModeText}"
+                           Grid.Column="1"
+                           FontSize="18"
+                           TextColor="White"
+                           VerticalOptions="Center"/>
+                    <Switch x:Name="showOtherSpiesSwitch"
+                            Grid.Column="2"
+                            VerticalOptions="Center"
+                            OnColor="#00C896"/>
+                </Grid>
+            </Frame>
+
+            <!-- Apply butonu -->
+            <Button Text="{x:Static resources:AppResources.btnApplyText}"
+                    Clicked="ApplySettings"
+                    FontSize="20"
+                    TextColor="White"
+                    BackgroundColor="#00C896"
+                    CornerRadius="15"
+                    HeightRequest="55"
+                    FontAttributes="Bold"
+                    Margin="0,20,0,0"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

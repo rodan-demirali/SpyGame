@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:SpyGame.Resources.Strings"
+             x:Class="SpyGame.GameTutorialPage"
+             Title="GameTutorialPage"
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False">
+
+    <!-- Gradient Background -->
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#1E1E2C" Offset="0.0"/>
+            <GradientStop Color="#2C2C44" Offset="0.5"/>
+            <GradientStop Color="#141420" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <Grid RowDefinitions="*,Auto,Auto" Padding="10">
+
+        <!-- CarouselView -->
+        <CarouselView x:Name="TutorialCarousel" Grid.Row="0" IsBounceEnabled="True" IndicatorView="indicator">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <ScrollView>
+                        <Frame 
+                            CornerRadius="25"
+                            BackgroundColor="#2A2A40"
+                            Padding="20"
+                            HasShadow="True"
+                            Margin="15">
+
+                            <VerticalStackLayout Spacing="20">
+                                <Image Source="spyicon.png" 
+                                       HeightRequest="80" 
+                                       WidthRequest="80" 
+                                       HorizontalOptions="Center" />
+
+                                <Label 
+                                    Text="{Binding Content}" 
+                                    TextColor="White"
+                                    FontSize="15"
+                                    HorizontalTextAlignment="Start"
+                                    LineBreakMode="WordWrap"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </ScrollView>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <!-- Indicator dots -->
+        <IndicatorView 
+            x:Name="indicator"
+            Grid.Row="1"
+            HorizontalOptions="Center"
+            IndicatorsShape="Circle"
+            IndicatorColor="Gray"
+            SelectedIndicatorColor="#FFCC00"
+            Margin="10"/>
+
+        <!-- Başla butonu -->
+        <Button 
+            Grid.Row="2"
+            Text="{x:Static resources:AppResources.btnDoneText}"
+            BackgroundColor="#FFCC00"
+            TextColor="Black"
+            FontAttributes="Bold"
+            CornerRadius="20"
+            HeightRequest="50"
+            Clicked="btnDone_Clicked"
+            Margin="20,10"/>
+    </Grid>
+</ContentPage>

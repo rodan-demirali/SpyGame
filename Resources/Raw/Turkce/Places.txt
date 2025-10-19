@@ -1,0 +1,20 @@
+Park
+Müze
+Kütüphane
+Sinema
+Tiyatro
+Restoran
+Kafe
+Okul
+Üniversite
+Hastane
+Havalimanı
+Otobüs durağı
+Sahil
+Dağ
+Orman
+Alışveriş merkezi
+Stadyum
+Cami
+Kilise
+Pazar yeri
